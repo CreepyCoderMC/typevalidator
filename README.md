@@ -1,5 +1,5 @@
 # Type Validator
-This module is small but easy to use. The purpose of this module is to check if what type a variable is the typeof command has a few limitations it can tell you if a variable is one of the following: array, NaN, declared or null. Another advantage this module can validate if a source is on of multiple types in one single command.
+This module is small but easy to use. The purpose of this module is to check if what type a variable is the typeof command has a few limitations it can tell you if a variable is one of the following: array, NaN, declared or null. Another advantage this module can validate if a source is one of multiple types in one single command.
 ## Validation processes
 The code got multiple checks to determine what type a variable is.
 ### Compare method 1
@@ -15,7 +15,7 @@ This method use the standard typeof command to identify a variable.
 ## Code sample
 This following code is actually how I tested that all methods correctly functioned as intended, is also provided in this module.
 ```
-import valueIsSmaller from './node_modules/@teamcoder/typevalidator/typevalidator.js';
+import valueIsTypeOf from './node_modules/@teamcoder/typevalidator/typevalidator.js';
 
 var test_undefined
 var test_object = {type:"Fiat", model:"500", color:"white"};
@@ -76,6 +76,7 @@ Testing for invalid type = Passed
 | Version  | Date                   | Remark                              |
 |----------|------------------------|-------------------------------------|
 | 1.0.0    | 08 September 2022      | Official first release              |
+| 1.0.1    | 08 September 2022      | Correcting documentation            |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 > npm i @teamcoder/typevalidator

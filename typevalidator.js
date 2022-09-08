@@ -228,6 +228,7 @@
  /*     VERSION HISTORY
   *
   *     1.0.0       08 September 2022           Official first release
+  *     1.0.1       08 September 2022           Correcting documentation
   */
 
  /* Validates if the source is of specified type
