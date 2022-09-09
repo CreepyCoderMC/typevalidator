@@ -73,10 +73,11 @@ Testing for invalid type = Passed
 @return { Null           }                  Invalid type specified in type
 ```
 ## Version History
-| Version  | Date                   | Remark                              |
-|----------|------------------------|-------------------------------------|
-| 1.0.0    | 08 September 2022      | Official first release              |
-| 1.0.1    | 08 September 2022      | Correcting documentation            |
+| Version  | Date                   | Remark                                                |
+|----------|------------------------|-------------------------------------------------------|
+| 1.0.0    | 08 September 2022      | Official first release                                |
+| 1.0.1    | 08 September 2022      | Correcting documentation                              |
+| 1.0.2    | 09 September 2022      | Fixed package.json so that npm can install on any os  |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 > npm i @teamcoder/typevalidator
