@@ -230,17 +230,19 @@
   *     1.0.0       08 September 2022           Official first release
   *     1.0.1       08 September 2022           Correcting documentation
   *     1.0.2       09 September 2022           Fixed package.json so that npm can install on any os
+  *     1.0.3       10 September 2022           Fixed code to be proper npm package
   */
 
  /* Validates if the source is of specified type
   * @param  { Any            } source           The source value to be checked
   * @param  { String, Array  } type             The type or types to validate ( "undefined" , "boolean" , "number" , "string" ,
   *                                                 "symbol" , "function" , "object" , "array" , "nan" , "declared" , "null" )
+  * 
   * @return { Boolean        }                  Validation passed or failed
   * @return { Null           }                  Invalid type specified in type
   */
 
-export default function valueIsTypeOf( source , type ) {
+export default function valueIsTypeOf ( source , type ) {
 
     // Check if type is a string, if so turn type into an array
     if( typeof type === "string" ) type = [ type ] ; 

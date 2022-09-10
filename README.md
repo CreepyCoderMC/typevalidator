@@ -15,10 +15,10 @@ This method use the standard typeof command to identify a variable.
 ## Code sample
 This following code is actually how I tested that all methods correctly functioned as intended, is also provided in this module.
 ```
-import valueIsTypeOf from './node_modules/@teamcoder/typevalidator/typevalidator.js';
+import valueIsTypeOf from '@teamcoder/typevalidator';
 
 var test_undefined
-var test_object = {type:"Fiat", model:"500", color:"white"};
+var test_object = { type: "Fiat" , model: "500" , color: "white" };
 var test_boolean = true;
 var test_number = 14;
 var test_string = "Hallo World";
@@ -69,6 +69,7 @@ Testing for invalid type = Passed
 @param  { Any            } source           The source value to be checked
 @param  { String, Array  } type             The type or types to validate ( "undefined" , "boolean" , "number" , "string" ,
                                                  "symbol" , "function" , "object" , "array" , "nan" , "declared" , "null" )
+
 @return { Boolean        }                  Validation passed or failed
 @return { Null           }                  Invalid type specified in type
 ```
@@ -78,6 +79,7 @@ Testing for invalid type = Passed
 | 1.0.0    | 08 September 2022      | Official first release                                |
 | 1.0.1    | 08 September 2022      | Correcting documentation                              |
 | 1.0.2    | 09 September 2022      | Fixed package.json so that npm can install on any os  |
+| 1.0.3    | 10 September 2022      | Fixed code to be proper npm package                   |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 > npm i @teamcoder/typevalidator

@@ -1,7 +1,7 @@
-import valueIsTypeOf from './typevalidator.js';
+import { valueIsTypeOf } from '@teamcoder/typevalidator';
 
 var test_undefined
-var test_object = {type:"Fiat", model:"500", color:"white"};
+var test_object = { type: "Fiat" , model: "500" , color: "white" };
 var test_boolean = true;
 var test_number = 14;
 var test_string = "Hallo World";
