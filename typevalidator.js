@@ -231,6 +231,7 @@
   *     1.0.1       08 September 2022           Correcting documentation
   *     1.0.2       09 September 2022           Fixed package.json so that npm can install on any os
   *     1.0.3       10 September 2022           Fixed code to be proper npm package
+  *     1.0.4       11 September 2022           Removed Default from export function in typevalidator.js file
   */
 
  /* Validates if the source is of specified type
@@ -242,7 +243,7 @@
   * @return { Null           }                  Invalid type specified in type
   */
 
-export default function valueIsTypeOf ( source , type ) {
+export function valueIsTypeOf ( source , type ) {
 
     // Check if type is a string, if so turn type into an array
     if( typeof type === "string" ) type = [ type ] ; 
