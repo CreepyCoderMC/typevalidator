@@ -234,6 +234,7 @@
   *     1.0.4       11 September 2022           Removed Default from export function in typevalidator.js file
   *     1.0.5       12 September 2022           Code has been improved
   *     1.0.6       12 September 2022           package.json fixed
+  *     1.0.7       12 September 2022           typevalidator.js fixed
   */
 
  /* Validates if the source is of specified type
@@ -250,7 +251,7 @@ import { convertToArray } from '/@teamcoder/toarrayconverter';
 export function valueIsTypeOf ( source , type ) {
 
     // Check that type is string or array else return null to indicate invalid type specified
-    if( typeof source !== "string" && !Array.isArray( source ) )        return null;
+    if( typeof type !== "string" && !Array.isArray( type ) )             return null;
     
     // Check if type is a string, if so turn type into an array
     type = convertToArray( type ); 
@@ -264,7 +265,7 @@ export function valueIsTypeOf ( source , type ) {
         if( type[ i ] === "null"      && source        === null        ) return true;
         if( type[ i ] === "declaired" && typeof source !== "undefined" ) return true;
 
-        if( typeof source === type[ i ] ) return true; // Keep this check always last
+        if( typeof source === type[ i ] )                                return true; // Keep this check always last
 
     };
 

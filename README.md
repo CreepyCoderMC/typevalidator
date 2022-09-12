@@ -98,6 +98,7 @@ import { valueIsTypeOf } from '@teamcoder/typevalidator';
 | 1.0.4    | 11 September 2022      | Removed Default from export function in typevalidator.js file                                         |
 | 1.0.5    | 12 September 2022      | Code has been improved                                                                                |
 | 1.0.6    | 12 September 2022      | package.json fixed                                                                                    |
+| 1.0.7    | 12 September 2022      | typevalidator.js fixed                                                                                |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 ## Dependencies:
