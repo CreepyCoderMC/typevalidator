@@ -96,8 +96,14 @@ import { valueIsTypeOf } from '@teamcoder/typevalidator';
 | 1.0.2    | 09 September 2022      | Fixed package.json so that npm can install on any os                                                  |
 | 1.0.3    | 10 September 2022      | Fixed code to be proper npm package                                                                   |
 | 1.0.4    | 11 September 2022      | Removed Default from export function in typevalidator.js file                                         |
+| 1.0.5    | 12 September 2022      | Code has been improved                                                                                |
+| 1.0.6    | 12 September 2022      | package.json fixed                                                                                    |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
+## Dependencies:
+```
+@teamcoder/toarrayconverter
+```
 > npm i @teamcoder/typevalidator
 ## Operating Systems Tested On
 >Windows, Linux and RaspberryPi

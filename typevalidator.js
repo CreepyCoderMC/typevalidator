@@ -232,6 +232,8 @@
   *     1.0.2       09 September 2022           Fixed package.json so that npm can install on any os
   *     1.0.3       10 September 2022           Fixed code to be proper npm package
   *     1.0.4       11 September 2022           Removed Default from export function in typevalidator.js file
+  *     1.0.5       12 September 2022           Code has been improved
+  *     1.0.6       12 September 2022           package.json fixed
   */
 
  /* Validates if the source is of specified type
@@ -243,32 +245,30 @@
   * @return { Null           }                  Invalid type specified in type
   */
 
+import { convertToArray } from '/@teamcoder/toarrayconverter';
+
 export function valueIsTypeOf ( source , type ) {
 
+    // Check that type is string or array else return null to indicate invalid type specified
+    if( typeof source !== "string" && !Array.isArray( source ) )        return null;
+    
     // Check if type is a string, if so turn type into an array
-    if( typeof type === "string" ) type = [ type ] ; 
+    type = convertToArray( type ); 
 
-    // Check if type is a array
-    if( typeof type === "object" && Array.isArray(type) ) {
+    // Loop thru typees to test for
+    for ( var i = 0 ; i < type.length ; i++ ) {
 
-        // Loop thru typees to test for
-        for ( var i = 0 ; i < type.length ; i++ ) {
+        // Test types typeof does not detect properly
+        if( type[ i ] === "nan"       && isNaN( source )               ) return true;
+        if( type[ i ] === "array"     && Array.isArray( source )       ) return true;
+        if( type[ i ] === "null"      && source        === null        ) return true;
+        if( type[ i ] === "declaired" && typeof source !== "undefined" ) return true;
 
-            // Test types typeof does not detect properly
-            if( type[ i ] === "nan"       && isNaN( source )               ) return true;
-            if( type[ i ] === "array"     && Array.isArray( source )       ) return true;
-            if( type[ i ] === "null"      && source        === null        ) return true;
-            if( type[ i ] === "declaired" && typeof source !== "undefined" ) return true;
+        if( typeof source === type[ i ] ) return true; // Keep this check always last
 
-            if( typeof source === type[ i ] ) return true; // Keep this check always last
+    };
 
-        };
- 
-        return false;
-
-    }
-
-    // Return Null to indicate that type specified is invalid
-    return null;   
+    // Return False to indicate that type not found in array
+    return false;   
 
 }
