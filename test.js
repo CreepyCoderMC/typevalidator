@@ -1,4 +1,5 @@
 import { valueIsTypeOf } from '@teamcoder/typevalidator';
+import { listOfTypes   } from '@teamcoder/typevalidator';
 
 var test_undefined
 var test_object = { type: "Fiat" , model: "500" , color: "white" };
@@ -28,4 +29,6 @@ console.log( "Testing for NaN          = " + valueIsTypeOf(  test_nan       , "n
 console.log( "Testing for declaired    = " + valueIsTypeOf(  test_declaired , "declaired" ) + " --> typeof = " + typeof test_declaired );
 console.log( "Testing for multi-types  = " + valueIsTypeOf(  true           , list_types  ) );
 console.log( "Testing for multi-types  = " + !valueIsTypeOf( "A"            , list_types  ) );
-if( valueIsTypeOf( true , true ) === null  ) { console.log("Testing for invalid type = Passed") } else { console.log("Testing for invalid type = Failed") };
+console.log( "Testing for invalid type = " + (valueIsTypeOf( true , true ) === null? true : false ) );
+console.log( "" );
+console.log( "List of types supported by module: " + listOfTypes() )

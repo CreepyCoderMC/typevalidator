@@ -15,7 +15,8 @@ This method use the standard typeof command to identify a variable.
 ## Code sample
 This following code is actually how I tested that all methods correctly functioned as intended, is also provided in this module.
 ```
-import valueIsTypeOf from '@teamcoder/typevalidator';
+import { valueIsTypeOf } from '@teamcoder/typevalidator';
+import { valueIsTypeOf } from '@teamcoder/typevalidator';
 
 var test_undefined
 var test_object = { type: "Fiat" , model: "500" , color: "white" };
@@ -32,20 +33,22 @@ var test_declaired = "I'm declaired as a string";
 
 var list_types = [ "boolean" , "number" ];
 
-console.log( "Testing for undefined   = " + valueIsTypeOf(  test_undefined , "undefined" ) + " --> typeof = " + typeof test_undefined );
-console.log( "Testing for object      = " + valueIsTypeOf(  test_object    , "object"    ) + " --> typeof = " + typeof test_object    );
-console.log( "Testing for boolean     = " + valueIsTypeOf(  test_boolean   , "boolean"   ) + " --> typeof = " + typeof test_boolean   );
-console.log( "Testing for number      = " + valueIsTypeOf(  test_number    , "number"    ) + " --> typeof = " + typeof test_number    );
-console.log( "Testing for string      = " + valueIsTypeOf(  test_string    , "string"    ) + " --> typeof = " + typeof test_string    );
-console.log( "Testing for symbol      = " + valueIsTypeOf(  test_symbol    , "symbol"    ) + " --> typeof = " + typeof test_symbol    );
-console.log( "Testing for function    = " + valueIsTypeOf(  test_function  , "function"  ) + " --> typeof = " + typeof test_function  );
-console.log( "Testing for array       = " + valueIsTypeOf(  test_array     , "array"     ) + " --> typeof = " + typeof test_array     );
-console.log( "Testing for null        = " + valueIsTypeOf(  test_null      , "null"      ) + " --> typeof = " + typeof test_null      );
-console.log( "Testing for NaN         = " + valueIsTypeOf(  test_nan       , "nan"       ) + " --> typeof = " + typeof test_nan       );
-console.log( "Testing for declaired   = " + valueIsTypeOf(  test_declaired , "declaired" ) + " --> typeof = " + typeof test_declaired );
-console.log( "Testing for multi-types = " + valueIsTypeOf(  true           , list_types  ) );
-console.log( "Testing for multi-types = " + !valueIsTypeOf( "A"            , list_types  ) );
-if( valueIsTypeOf( true , true ) === null  ) { console.log("Testing for invalid type = Passed") } else { console.log("Testing for invalid type = Failed") };
+console.log( "Testing for undefined    = " + valueIsTypeOf(  test_undefined , "undefined" ) + " --> typeof = " + typeof test_undefined );
+console.log( "Testing for object       = " + valueIsTypeOf(  test_object    , "object"    ) + " --> typeof = " + typeof test_object    );
+console.log( "Testing for boolean      = " + valueIsTypeOf(  test_boolean   , "boolean"   ) + " --> typeof = " + typeof test_boolean   );
+console.log( "Testing for number       = " + valueIsTypeOf(  test_number    , "number"    ) + " --> typeof = " + typeof test_number    );
+console.log( "Testing for string       = " + valueIsTypeOf(  test_string    , "string"    ) + " --> typeof = " + typeof test_string    );
+console.log( "Testing for symbol       = " + valueIsTypeOf(  test_symbol    , "symbol"    ) + " --> typeof = " + typeof test_symbol    );
+console.log( "Testing for function     = " + valueIsTypeOf(  test_function  , "function"  ) + " --> typeof = " + typeof test_function  );
+console.log( "Testing for array        = " + valueIsTypeOf(  test_array     , "array"     ) + " --> typeof = " + typeof test_array     );
+console.log( "Testing for null         = " + valueIsTypeOf(  test_null      , "null"      ) + " --> typeof = " + typeof test_null      );
+console.log( "Testing for NaN          = " + valueIsTypeOf(  test_nan       , "nan"       ) + " --> typeof = " + typeof test_nan       );
+console.log( "Testing for declaired    = " + valueIsTypeOf(  test_declaired , "declaired" ) + " --> typeof = " + typeof test_declaired );
+console.log( "Testing for multi-types  = " + valueIsTypeOf(  true           , list_types  ) );
+console.log( "Testing for multi-types  = " + !valueIsTypeOf( "A"            , list_types  ) );
+console.log( "Testing for invalid type = " + (valueIsTypeOf( true , true ) === null? true : false ) );
+console.log( "" );
+console.log( "List of types supported by module: " + listOfTypes() )
 ```
 The results will look as follows
 ```
@@ -63,8 +66,10 @@ Testing for declaired    = true --> typeof = string
 Testing for multi-types  = true
 Testing for multi-types  = true
 Testing for invalid type = Passed
+
+List of types supported by module: undefined,object,boolean,number,string,symbol,function,array,null,nan,declaired
 ```
-## Function Parameters
+## Function valueIsTypeOf
 ### Parameters Passed
 ```
 @param  { Any            } source           The source value to be checked
@@ -75,6 +80,11 @@ Testing for invalid type = Passed
 ```
 @return { Boolean        }                  Validation passed or failed
 @return { Null           }                  Invalid type specified in type
+```
+## Function valueIsTypeOf
+### Parameters Returned
+```
+@return { Array          }                  Return a array containing all types module can identify
 ```
 ## Notes Before You Start
 Very important to remember to always include the following in your main project package.json file:
@@ -99,6 +109,7 @@ import { valueIsTypeOf } from '@teamcoder/typevalidator';
 | 1.0.5    | 12 September 2022      | Code has been improved                                                                                |
 | 1.0.6    | 12 September 2022      | package.json fixed                                                                                    |
 | 1.0.7    | 12 September 2022      | typevalidator.js fixed                                                                                |
+| 1.1.0    | 13 September 2022      | Added function to return all types module can identify                                                |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 ## Dependencies:

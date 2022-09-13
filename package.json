@@ -1,44 +1,37 @@
 {
-  
-  "type":         "module",
-  "name":         "@teamcoder/typevalidator",
-  "version":      "1.0.7",
-  "description":  "This module is small but easy to use. The purpose of this module is to check if what type a variable is the typeof command has a few limitations it can tell you if a variable is one of the following: array, NaN, declared or null. Another advantage this module can validate if a source is one of multiple types in one single command.",
-  "main":         "typevalidator.js",
-
+  "type": "module",
+  "name": "@teamcoder/typevalidator",
+  "version": "1.1.0",
+  "description": "This module is small but easy to use. The purpose of this module is to check if what type a variable is the typeof command has a few limitations it can tell you if a variable is one of the following: array, NaN, declared or null. Another advantage this module can validate if a source is one of multiple types in one single command.",
+  "main": "typevalidator.js",
   "keywords": [
-                  "value",
-                  "type",
-                  "multi",
-                  "specified",
-                  "equal",
-                  "validator",
-                  "node.js",
-                  "javascript"
+    "value",
+    "type",
+    "multi",
+    "specified",
+    "equal",
+    "validator",
+    "node.js",
+    "javascript"
   ],
-
-  "author":       "CreepyCoderMC",
-  "license":      "CC-BY-NC-ND-4.0",
-  "homepage":     "https://github.com/CreepyCoderMC",
-  "url":          "https://github.com/CreepyCoderMC/typevalidator/issues",
-  "email":        "creepycodermc@gmail.com",
-
+  "author": "CreepyCoderMC",
+  "license": "CC-BY-NC-ND-4.0",
+  "homepage": "https://github.com/CreepyCoderMC",
+  "url": "https://github.com/CreepyCoderMC/typevalidator/issues",
+  "email": "creepycodermc@gmail.com",
   "funding": {
-  "type":         "PayPal Donation",
-  "url":          "https://www.paypal.com/donate/?hosted_button_id=NNPJXD2CLSXRA"
+    "type": "PayPal Donation",
+    "url": "https://www.paypal.com/donate/?hosted_button_id=NNPJXD2CLSXRA"
   },
-
   "repository": {
-  "type":         "git",  
-  "url":          "https://github.com/CreepyCoderMC/typevalidator"
+    "type": "git",
+    "url": "https://github.com/CreepyCoderMC/typevalidator"
   },
-
   "scripts": {
-  "test":         "node test.js"
+    "test": "node test.js"
   },
-
   "dependencies": {
-    "@teamcoder/toarrayconverter": "^1.0.0"
+    "@teamcoder/arrayequalvalidator": "^1.0.1",
+    "@teamcoder/toarrayconverter": "^1.0.2"
   }
-
 }

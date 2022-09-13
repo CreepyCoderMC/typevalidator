@@ -235,9 +235,14 @@
   *     1.0.5       12 September 2022           Code has been improved
   *     1.0.6       12 September 2022           package.json fixed
   *     1.0.7       12 September 2022           typevalidator.js fixed
+  *     1.1.0       13 September 2022           Added function to return all types module can identify
   */
+ 
+import { convertToArray } from '@teamcoder/toarrayconverter';
+import { arrayEqual     } from '@teamcoder/arrayequalvalidator';
 
- /* Validates if the source is of specified type
+ /* Function: convertToArray
+  * Validates if the source is of specified type
   * @param  { Any            } source           The source value to be checked
   * @param  { String, Array  } type             The type or types to validate ( "undefined" , "boolean" , "number" , "string" ,
   *                                                 "symbol" , "function" , "object" , "array" , "nan" , "declared" , "null" )
@@ -246,13 +251,18 @@
   * @return { Null           }                  Invalid type specified in type
   */
 
-import { convertToArray } from '/@teamcoder/toarrayconverter';
-
 export function valueIsTypeOf ( source , type ) {
 
     // Check that type is string or array else return null to indicate invalid type specified
     if( typeof type !== "string" && !Array.isArray( type ) )             return null;
-    
+
+    // Check if type specified is valid
+    for ( var i = 0 ; i < type.length ; i++ ) {
+
+        if( !arrayEqual( listOfTypes() , type[ i ] ) )                   return null;
+
+    }
+
     // Check if type is a string, if so turn type into an array
     type = convertToArray( type ); 
 
@@ -273,3 +283,10 @@ export function valueIsTypeOf ( source , type ) {
     return false;   
 
 }
+
+ /* Function: convertToArray
+  * Returns a list of all types function can identify
+  * @return { Array          }                  Return a array containing all types module can identify
+  */
+
+export function listOfTypes()  { return [ "undefined" , "object" , "boolean" , "number" , "string" , "symbol" , "function" , "array" , "null" , "nan" , "declaired" ] }
