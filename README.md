@@ -16,7 +16,7 @@ This method use the standard typeof command to identify a variable.
 This following code is actually how I tested that all methods correctly functioned as intended, is also provided in this module.
 ```
 import { valueIsTypeOf } from '@teamcoder/typevalidator';
-import { valueIsTypeOf } from '@teamcoder/typevalidator';
+import { listOfTypes   } from '@teamcoder/typevalidator';
 
 var test_undefined
 var test_object = { type: "Fiat" , model: "500" , color: "white" };
@@ -69,7 +69,7 @@ Testing for invalid type = Passed
 
 List of types supported by module: undefined,object,boolean,number,string,symbol,function,array,null,nan,declaired
 ```
-## Function valueIsTypeOf
+## Function valueIsTypeOf(source, target)
 ### Parameters Passed
 ```
 @param  { Any            } source           The source value to be checked
@@ -81,7 +81,7 @@ List of types supported by module: undefined,object,boolean,number,string,symbol
 @return { Boolean        }                  Validation passed or failed
 @return { Null           }                  Invalid type specified in type
 ```
-## Function valueIsTypeOf
+## Function valueIsTypeOf()
 ### Parameters Returned
 ```
 @return { Array          }                  Return a array containing all types module can identify
@@ -110,6 +110,7 @@ import { valueIsTypeOf } from '@teamcoder/typevalidator';
 | 1.0.6    | 12 September 2022      | package.json fixed                                                                                    |
 | 1.0.7    | 12 September 2022      | typevalidator.js fixed                                                                                |
 | 1.1.0    | 13 September 2022      | Added function to return all types module can identify                                                |
+| 1.1.1    | 14 September 2022      | Correcting documentation                                                                              |
 ## How To Install
 Run the following command in a terminal or command prompt in the folder you want to install the module to.
 ## Dependencies:
